@@ -5,11 +5,18 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "server": "nodemon server"
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Mitrajsinh Jadeja",
   "license": "MIT",
   "dependencies": {
+    "@reduxjs/toolkit": "^2.6.1",
+    "ajv": "^8.17.1",
+    "ajv-keywords": "^5.1.0",
+    "axios": "^1.8.3",
     "bcryptjs": "^3.0.2",
     "config": "^3.3.12",
     "cors": "^2.8.5",
@@ -21,7 +28,18 @@
     "jsonwebtoken": "^9.0.2",
     "mongoos": "^0.0.1-security",
     "mongoose": "^8.12.1",
-    "request": "^2.88.2"
+    "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.3.0",
+    "react-scripts": "^5.0.1",
+    "redux": "^5.0.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^3.1.0",
+    "request": "^2.88.2",
+    "util": "^0.12.5",
+    "uuid": "^11.1.0",
+    "uuidv4": "^6.2.13",
+    "webpack-dev-server": "^5.2.0"
   },
   "devDependencies": {
     "concurrently": "^9.1.2",
